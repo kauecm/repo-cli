@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Home from 'pages/Home';
 import Clientes from 'pages/Clientes';
-import Navbar from "components/NavBar";
+import Result from "pages/Result";
 import Dashboard from "pages/Dashboard";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/clientes" element={<Clientes />}/>
         <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="/clientes/result" element={<Result/>}/>
       </Routes>
     </BrowserRouter>
   );
