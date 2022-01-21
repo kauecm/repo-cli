@@ -1,13 +1,15 @@
 package com.guardaquery.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.guardaquery.domain.Cliente;
-import com.guardaquery.domain.Query;
+import com.guardaquery.dto.ClienteDTO;
 import com.guardaquery.repositories.ClienteRepository;
 import com.guardaquery.repositories.QueryRepository;
 
@@ -25,8 +27,17 @@ public class ClienteService {
 		return cli.get();
 	}
 	
-	public List<Cliente> findAll(){
-		return repo.findAll();
+	public ClienteDTO findClientesDTOByNome(String nome){
+		Cliente cli = repo.findByNome(nome);
+		ClienteDTO cliDTO = new ClienteDTO(cli);
+		return cliDTO;
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<ClienteDTO> findAllDTO(Pageable pageable){
+		Page<Cliente> cli = repo.findAll(pageable);
+		Page<ClienteDTO> cliDTO = cli.map(x -> new ClienteDTO(x));
+		return cliDTO;
 	}
 	
 	public Cliente findByNome(String nome) {

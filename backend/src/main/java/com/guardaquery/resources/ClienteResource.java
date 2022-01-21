@@ -1,9 +1,10 @@
 package com.guardaquery.resources;
 
 import java.net.URI;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.guardaquery.domain.Cliente;
+import com.guardaquery.dto.ClienteDTO;
 import com.guardaquery.services.ClienteService;
 
 @RestController
@@ -29,9 +31,18 @@ public class ClienteResource {
 		Cliente cli = service.findById(id);
 		return ResponseEntity.ok().body(cli);
 	}
+	
+	@GetMapping(value="/nome/{nome}")
+	public ResponseEntity<ClienteDTO> findByNome(@PathVariable String nome){
+		ClienteDTO dto = service.findClientesDTOByNome(nome);
+		return ResponseEntity.ok().body(dto);
+	}
+	
+	
+	
 	@GetMapping
-	public ResponseEntity<List<Cliente>> findAll(){
-		List<Cliente>cli = service.findAll();
+	public ResponseEntity<Page<ClienteDTO>> findAll(Pageable pageable){
+		Page<ClienteDTO>cli = service.findAllDTO(pageable);
 		return ResponseEntity.ok().body(cli);
 	}
 	

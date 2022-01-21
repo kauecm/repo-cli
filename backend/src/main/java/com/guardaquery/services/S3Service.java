@@ -50,7 +50,7 @@ public class S3Service {
 
 			return s3Client.getUrl(bucketName, fileName).toURI();
 		} catch (URISyntaxException e) {
-			throw new RuntimeException("Eerro ao converter URL para URI...");
+			throw new RuntimeException("Erro ao converter URL para URI...");
 		}
 	}
 

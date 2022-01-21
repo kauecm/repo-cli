@@ -27,7 +27,6 @@ public class Cliente implements Serializable {
 	private String nome;
 
 	private String tipoCliente;
-	
 	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	private List<Query> queries = new ArrayList<Query>();

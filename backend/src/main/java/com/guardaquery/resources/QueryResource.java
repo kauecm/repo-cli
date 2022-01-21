@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.guardaquery.domain.Cliente;
 import com.guardaquery.domain.Query;
 import com.guardaquery.services.QueryService;
 
@@ -45,6 +44,12 @@ public class QueryResource {
 			return ResponseEntity.ok().body(query);
 	}
 	
+	@GetMapping(value = "/cliente/{nome}")
+	public ResponseEntity<List<Query>>findAllByCliente(@PathVariable String nome){
+			List<Query> query = service.findAllByNomeCliente(nome);
+			return ResponseEntity.ok().body(query);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Query> insert(@Validated @RequestBody Query obj){
 		obj = service.insert(obj);
@@ -53,8 +58,10 @@ public class QueryResource {
 	}
 	
 	@PutMapping(value = "/files")
-	public ResponseEntity<Void> insertFile(@RequestParam(name="file") MultipartFile file, @RequestParam(name = "id") Long id){
-		URI uri = service.uploadFile(file,id);
+	public ResponseEntity<Void> insertFile(@RequestParam(name="file") MultipartFile file
+										 , @RequestParam(name = "id") Long id
+										 , @RequestParam(name="idCliente")String nome){
+		URI uri = service.uploadFile(file,id, nome);
 		return ResponseEntity.created(uri).build();
 	}
 	
