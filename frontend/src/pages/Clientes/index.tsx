@@ -1,3 +1,4 @@
+import Footerbar from "components/Footerbar";
 import Navbar from "components/NavBar";
 import { Link } from "react-router-dom";
 import "./styles.css";
@@ -6,7 +7,7 @@ function Clientes() {
 
         <>
             <Navbar />
-            <div className="container ">
+            <div className="container repo-div-container">
                 <div className="repo-termos"> <h1>Termos de Busca</h1> </div>
                 <hr />
 
@@ -30,6 +31,7 @@ function Clientes() {
                 </div>
 
             </div>
+            <Footerbar/>
 
 
 

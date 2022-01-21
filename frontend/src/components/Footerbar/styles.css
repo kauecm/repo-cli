@@ -1,0 +1,22 @@
+.repo-footer{
+    background-color: var(--color-primary);
+    align-items: center;
+    text-align: center;
+    height: 100px;
+}
+.infos{
+    height: auto;
+    margin-top: 15px;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text{
+    font-family: var(--font-style);
+    font-size: 25px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

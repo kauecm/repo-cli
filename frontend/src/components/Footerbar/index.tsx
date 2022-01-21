@@ -1,10 +1,13 @@
+import './styles.css';
+import {ReactComponent as GitHubIcon} from 'img/github.svg';
 function Footerbar(){
     return (
-        <footer className="footer mt-auto py-3 bg-dark">
+        <footer className="p-3 repo-footer">
                 <div className="container">
-                    <a href="">
-                        <div>
-                            <h1 className="text-light">Pensado e desenvolvido por Kauê</h1>
+                    <a href="https://github.com/kauecm" target="_blank" rel="noreferrer">
+                        <div className="infos">
+                            <GitHubIcon/>
+                            <a className="text">/kauecm</a>
                         </div>
                      </a>
                     

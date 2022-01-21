@@ -1,12 +1,14 @@
+import Footerbar from "components/Footerbar";
 import Navbar from "components/NavBar";
-
+import './styles.css'
 function Home(){
     return(
         <>
         <Navbar/>
-        <div>Pagina inicial - aqui conteudo legal :) </div>
-        
+        <div className="div-home">Pagina inicial - aqui conteudo legal :) </div>
+        <Footerbar/>
         </>
+        
 
     );
 }
