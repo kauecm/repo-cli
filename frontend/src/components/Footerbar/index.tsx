@@ -1,18 +1,19 @@
 import './styles.css';
-import {ReactComponent as GitHubIcon} from 'img/github.svg';
-function Footerbar(){
+import { ReactComponent as GitHubIcon } from 'img/github.svg';
+function Footerbar() {
     return (
-        <footer className="p-3 repo-footer">
-                <div className="container">
+        <footer className="repo-footer">
+            <nav className="container">
+                <div className="repo-div-credentials">
                     <a href="https://github.com/kauecm" target="_blank" rel="noreferrer">
-                        <div className="infos">
-                            <GitHubIcon/>
-                            <a className="text">/kauecm</a>
+                        <div className="repo-credentials">
+                            <GitHubIcon />
+                            <h1 className="repo-credentials-link">/kauecm</h1>
                         </div>
-                     </a>
-                    
+                    </a>
+
                 </div>
-            
+            </nav>
         </footer>
     );
 }
