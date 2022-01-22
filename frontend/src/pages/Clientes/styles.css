@@ -35,6 +35,9 @@ p{
     margin-left: 15px;
 }
 .repo-div-container{
-    height: 500px;
+    align-items: center !important;
 }
- 
+.pagination-content{
+    align-items: center;
+    display: flex;
+}
