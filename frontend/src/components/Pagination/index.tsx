@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function Pagination() {
     return (
         <nav aria-label="Page navigation example">
