@@ -2,7 +2,8 @@
     background-color: var(--color-primary);
     height: 100px;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     
 }
 .repo-div-credentials{
@@ -10,6 +11,7 @@
     justify-content: space-between;
     color: #fff;
     align-items: center;
+    margin: 0;
 }
 .repo-div-credentials h1{
     font-size: 24px;
@@ -19,6 +21,5 @@
 
 .repo-credentials{
     display: flex;
-    align-items: center;
-    margin-left: 510px;
+    align-items: center 
 }

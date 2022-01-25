@@ -9,10 +9,11 @@ function Clientes() {
 
         <>
             <Navbar />
-            <div className="container repo-div-container">
+
+            <div >
                 <div className="repo-termos"> <h1>Termos de Busca</h1> </div>
                 <hr />
-
+                
                 <div className="repo-termo-busca-container">
                     <p>Buscar clientes por nome</p>
                     <input className="input" type="text" />
@@ -31,9 +32,12 @@ function Clientes() {
                             <button type="submit" className="btn btn-primary repo-btn">Buscar</button>
                         </Link></div>
                 </div>
+                </div>
+                <hr/>
+                
 
-                <div className="table-responsive">
-                    <table className="table table-sm">
+                <div className="table-responsive table-pagination">
+                    <table className="table table-sm ">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -49,7 +53,7 @@ function Clientes() {
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
@@ -124,11 +128,11 @@ function Clientes() {
                             </tr>
                         </tbody>
                     </table>
+                    <Pagination/>
                 </div>
-                <div className="pagination-content">
-                    <Pagination />
-                </div>
-            </div>
+                
+                    
+                
 
 
 

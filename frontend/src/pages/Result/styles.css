@@ -1,0 +1,10 @@
+.repo-result-clientes{
+    display: flex;
+    margin-top: 10px;
+}
+
+.repo-result-clientes h1 p {
+    font-family: var(--font-style) !important;
+}
+
+

@@ -15,10 +15,11 @@
 .repo-termo-busca-container{
     display: flex;
     align-items: center;
-    margin-top: 30px;
     text-align: center;
-    
+    margin-top: 10px;
 }
+
+
 .repo-termos h1{
     font-family: var(--font-style);
     font-size: 30px;
@@ -38,6 +39,9 @@ p{
     align-items: center !important;
 }
 .pagination-content{
-    align-items: center;
-    display: flex;
+        margin-left: 490px;
 }
+.table-pagination{
+    margin: 30px 30px 30px 30px;
+}
+
