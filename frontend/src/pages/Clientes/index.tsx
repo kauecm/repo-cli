@@ -10,7 +10,7 @@ function Clientes() {
         <>
             <Navbar />
 
-            <div >
+            <div className="container" >
                 <div className="repo-termos"> <h1>Termos de Busca</h1> </div>
                 <hr />
                 
@@ -32,8 +32,9 @@ function Clientes() {
                             <button type="submit" className="btn btn-primary repo-btn">Buscar</button>
                         </Link></div>
                 </div>
-                </div>
                 <hr/>
+                
+                
                 
 
                 <div className="table-responsive table-pagination">
@@ -57,80 +58,80 @@ function Clientes() {
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>1</td>
                                 <td>Semparar</td>
                                 <td>Sem pressa</td>
                                 <td>Pedagio</td>
-                                <Link to="/">
+                                <Link to="/clientes/result">
                                     <td><IconLupa /></td></Link>
                             </tr>
                         </tbody>
                     </table>
                     <Pagination/>
                 </div>
-                
+                </div>
                     
                 
 

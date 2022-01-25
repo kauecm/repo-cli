@@ -10,6 +10,8 @@ function Result(){
         <div>
             <h1>Resultado:</h1>
         </div>
+        <hr/>
+    
         <div className="repo-result-clientes">
         <p>Nome cliente:</p><p> NOME DO CLIENTE AQUI</p>
         </div>
