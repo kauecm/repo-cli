@@ -7,4 +7,22 @@
     font-family: var(--font-style) !important;
 }
 
+.button-voltar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button-voltar button{
+    margin-right: 10px;
+}
+
+.button-voltar h1{
+    margin-bottom: 0px;
+}
+.table-style{
+    text-align: center;
+}
+
 
