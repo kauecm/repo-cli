@@ -2,7 +2,7 @@ export type Cliente = {
     id: number;
     nome: string;
     tipoCliente:string;
-    query:Query[];
+    query: Query[];
 }
 
 export type Query ={
@@ -16,13 +16,13 @@ export type Query ={
 }
 
 export type ClientePage ={
-    content: Cliente[];
+    content?: Cliente[];
     last:boolean;
     totalPages:number;
     totalElements:number;
-    size:number;
+    size?:number;
     number:number;
     first:boolean;
-    numberOfElements:number;
-    empty:boolean;
+    numberOfElements?:number;
+    empty?:boolean;
 }

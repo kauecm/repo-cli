@@ -4,7 +4,33 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import { ReactComponent as IconLupa } from "img/icon-zoom-in.svg";
 import Pagination from "components/Pagination";
+import { useEffect, useState } from "react";
+import { ClientePage } from "types/movie";
+import axios from "axios";
+import { BASE_URL } from "utils/requests";
 function Clientes() {
+        const [activePage, setActivePage]= useState(0);
+
+        const [page, setPage] = useState<ClientePage>({
+            first: true,
+            last:true,
+            number: 0,
+            totalElements: 0,
+            totalPages: 0
+        });
+
+
+        useEffect(() =>{
+            axios.get(`${BASE_URL}/clientes?size=10&page=${activePage}`)
+            .then(response =>{
+                setPage(response.data);
+            })
+        },[activePage]);
+
+        const changePage = (index: number)=>{
+            setActivePage(index);
+        }
+
     return (
 
         <>
@@ -37,113 +63,35 @@ function Clientes() {
                 
                 
 
-                <div className="table-responsive table-pagination">
-                    <table className="table table-sm ">
+                <div className="table-responsive ">
+                    <table className="table table-sm  table-pagination">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Cliente</th>
-                                <th>Descrição</th>
-                                <th>Tipo de Cliente</th>
+                                <th >Id</th>
+                                <th >Cliente</th>
+                                <th >Tipo de Cliente</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
+                            { page.content?.map(item =>(
+                                <tr key={item.id}>
+                                <td>{item.id}</td>
+                                <td>{item.nome}</td>
+                                <td>{item.tipoCliente}</td>
+                                <Link to={`/clientes/result/${item.id}`}>
                                     <td><IconLupa /></td></Link>
                             </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
-                        <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>Semparar</td>
-                                <td>Sem pressa</td>
-                                <td>Pedagio</td>
-                                <Link to="/clientes/result">
-                                    <td><IconLupa /></td></Link>
-                            </tr>
-                        </tbody>
+                            ))}
+                            
+                            
+                        </tbody>                       
                     </table>
-                    <Pagination/>
+                    <Pagination page={page} onPageChange={changePage} />
                 </div>
                 </div>
                     
-                
-
-
-
-
             <Footerbar />
-
-
-
-
-
 
         </>
 

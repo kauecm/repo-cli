@@ -27,8 +27,8 @@ public class ClienteResource {
 	private ClienteService service;
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Cliente> findById(@PathVariable Integer id){
-		Cliente cli = service.findById(id);
+	public ResponseEntity<ClienteDTO> findById(@PathVariable Integer id){
+		ClienteDTO cli = service.findClientesDTOById(id);
 		return ResponseEntity.ok().body(cli);
 	}
 	
@@ -37,7 +37,6 @@ public class ClienteResource {
 		ClienteDTO dto = service.findClientesDTOByNome(nome);
 		return ResponseEntity.ok().body(dto);
 	}
-	
 	
 	
 	@GetMapping

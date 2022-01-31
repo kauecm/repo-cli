@@ -33,6 +33,12 @@ public class ClienteService {
 		return cliDTO;
 	}
 	
+	public ClienteDTO findClientesDTOById(Integer id) {
+		Cliente cli = repo.findById(id).get();
+		ClienteDTO cliDTO = new ClienteDTO(cli);
+		return cliDTO;
+	}
+	
 	@Transactional(readOnly = true)
 	public Page<ClienteDTO> findAllDTO(Pageable pageable){
 		Page<Cliente> cli = repo.findAll(pageable);
