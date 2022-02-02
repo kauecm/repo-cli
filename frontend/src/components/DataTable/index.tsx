@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "utils/requests";
 import { Cliente } from "types/movie";
-import { Link } from "react-router-dom";
 import {ReactComponent as Download} from 'img/download-icon.svg'
 
 
