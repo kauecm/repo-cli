@@ -27,11 +27,11 @@ public class QueryResource {
 	@Autowired
 	private QueryService service;
 	
-	@GetMapping(value="/{id}")
-	public ResponseEntity<Query> findById(@PathVariable Integer id){
-		Query query = service.findById(id);
-		return ResponseEntity.ok().body(query);
-	}
+//	@GetMapping(value="/{id}")
+//	public ResponseEntity<Query> findById(@PathVariable Integer id){
+//		Query query = service.findById(id);
+//		return ResponseEntity.ok().body(query);
+//	}
 	@GetMapping
 	public ResponseEntity<List<Query>> findAll(){
 		List<Query>query= service.findAll();
@@ -44,11 +44,11 @@ public class QueryResource {
 			return ResponseEntity.ok().body(query);
 	}
 	
-	@GetMapping(value = "/cliente/{nome}")
-	public ResponseEntity<List<Query>>findAllByCliente(@PathVariable String nome){
-			List<Query> query = service.findAllByNomeCliente(nome);
-			return ResponseEntity.ok().body(query);
-	}
+//	@GetMapping(value = "/cliente/{nome}")
+//	public ResponseEntity<List<Query>>findAllByCliente(@PathVariable String nome){
+//			List<Query> query = service.findAllByNomeCliente(nome);
+//			return ResponseEntity.ok().body(query);
+//	}
 	
 	@PostMapping
 	public ResponseEntity<Query> insert(@Validated @RequestBody Query obj){

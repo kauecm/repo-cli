@@ -80,7 +80,7 @@ function Clientes() {
                                 <td>{item.nome}</td>
                                 <td>{item.tipoCliente}</td>
                                 <Link to={`/clientes/result/${item.id}`}>
-                                    <td><IconLupa /></td></Link>
+                                <td><IconLupa /></td></Link>
                             </tr>
                             ))}
                             

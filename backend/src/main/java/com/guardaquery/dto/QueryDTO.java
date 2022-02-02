@@ -18,6 +18,8 @@ public class QueryDTO {
 	
 	private String urlQuery;
 	
+	private Integer idCliente;
+	
 
 	public QueryDTO(Integer id, Long idQuery, String nome, String descricao, String sqgb, String tipoQuery,
 			String urlQuery) {
@@ -38,6 +40,7 @@ public class QueryDTO {
 		this.sqgb = query.getSqgb();
 		this.tipoQuery = query.getTipoQuery();
 		this.urlQuery = query.getUrlQuery();
+		this.idCliente = query.getCliente().getId();
 	}
 
 	public Integer getId() {
