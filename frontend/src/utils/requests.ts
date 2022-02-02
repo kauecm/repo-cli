@@ -1,1 +1,1 @@
-export const BASE_URL = "https://repo-cli.herokuapp.com/";
+export const BASE_URL = "https://repo-cli.herokuapp.com";
